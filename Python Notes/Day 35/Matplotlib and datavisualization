@@ -1,0 +1,459 @@
+100 DAYS OF PYTHON
+DAY 33 — MATPLOTLIB & DATA VISUALIZATION
+
+==================================================
+1. DATA VISUALIZATION
+==================================================
+
+Data visualization means representing data using graphical
+elements such as charts and plots.
+
+It helps to:
+- Identify trends and patterns
+- Compare values
+- Understand distributions
+- Find relationships between variables
+- Present data clearly
+
+Common applications:
+- Sales analysis
+- Business reports
+- Customer analysis
+- Stock market analysis
+- Scientific research
+- Machine learning
+
+
+==================================================
+2. MATPLOTLIB
+==================================================
+
+Matplotlib is a Python library used to create different
+types of graphs and charts.
+
+Basic import:
+
+import matplotlib.pyplot as plt
+
+Basic plotting structure:
+
+plt.plot(x, y)
+plt.show()
+
+
+==================================================
+3. LINE PLOT
+==================================================
+
+A line plot connects data points with lines.
+
+Useful for:
+- Trends over time
+- Continuous data
+- Comparing changes
+
+Syntax:
+
+plt.plot(x, y)
+
+Common parameters:
+- color
+- marker
+- linestyle
+- linewidth
+- alpha
+- label
+
+Example:
+
+months = ["Jan", "Feb", "Mar"]
+sales = [100, 150, 130]
+
+plt.plot(months, sales, marker="o")
+plt.title("Monthly Sales")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.show()
+
+
+==================================================
+4. BAR CHART
+==================================================
+
+A bar chart represents values using rectangular bars.
+
+Useful for:
+- Comparing categories
+- Department-wise values
+- Product comparisons
+
+Syntax:
+
+plt.bar(x, y)
+
+Common parameters:
+- color
+- width
+- edgecolor
+- alpha
+- label
+
+Example:
+
+departments = ["CSE", "ECE", "EEE"]
+students = [60, 45, 35]
+
+plt.bar(departments, students)
+plt.title("Department Strength")
+plt.xlabel("Department")
+plt.ylabel("Students")
+plt.show()
+
+
+==================================================
+5. HISTOGRAM
+==================================================
+
+A histogram displays the frequency distribution of numerical
+data.
+
+The data is divided into intervals called bins.
+
+Useful for:
+- Exam scores
+- Age distribution
+- Salary distribution
+- Data distribution analysis
+
+Syntax:
+
+plt.hist(data)
+
+Important parameters:
+- bins
+- color
+- edgecolor
+- alpha
+- histtype
+- density
+
+Example:
+
+scores = [45, 50, 55, 60, 65, 70, 72, 80, 85, 90]
+
+plt.hist(scores, bins=5, edgecolor="black")
+plt.title("Score Distribution")
+plt.xlabel("Score")
+plt.ylabel("Frequency")
+plt.show()
+
+
+==================================================
+6. SCATTER PLOT
+==================================================
+
+A scatter plot displays individual data points.
+
+Useful for identifying relationships between two variables.
+
+Example:
+Study hours and examination marks.
+
+Syntax:
+
+plt.scatter(x, y)
+
+Common parameters:
+- s
+- c
+- cmap
+- alpha
+- marker
+- edgecolors
+- linewidths
+
+Example:
+
+hours = [1, 2, 3, 4, 5]
+marks = [45, 50, 60, 70, 85]
+
+plt.scatter(hours, marks)
+plt.title("Study Hours vs Marks")
+plt.xlabel("Study Hours")
+plt.ylabel("Marks")
+plt.show()
+
+
+==================================================
+7. PIE CHART
+==================================================
+
+A pie chart represents parts of a whole using sectors.
+
+Useful for:
+- Market share
+- Budget distribution
+- Category percentages
+
+Syntax:
+
+plt.pie(values, labels=labels)
+
+Important parameters:
+- labels
+- autopct
+- startangle
+- explode
+- shadow
+- colors
+
+Example:
+
+values = [40, 30, 20, 10]
+labels = ["A", "B", "C", "D"]
+
+plt.pie(values, labels=labels, autopct="%1.1f%%")
+plt.title("Market Share")
+plt.show()
+
+
+==================================================
+8. BOX PLOT
+==================================================
+
+A box plot summarizes the distribution of numerical data.
+
+It can help identify:
+- Median
+- Quartiles
+- Spread
+- Outliers
+
+Syntax:
+
+plt.boxplot(data)
+
+Useful parameters:
+- labels
+- vert
+- notch
+- patch_artist
+- showmeans
+- meanline
+- boxprops
+- medianprops
+- flierprops
+
+Example:
+
+salary = [25000, 28000, 30000, 32000, 35000, 50000]
+
+plt.boxplot(salary)
+plt.title("Salary Distribution")
+plt.ylabel("Salary")
+plt.show()
+
+
+==================================================
+9. AREA CHART
+==================================================
+
+An area chart is similar to a line plot but fills the region
+below the line.
+
+Useful for:
+- Showing trends
+- Cumulative values
+- Website visitors
+- Sales over time
+
+Syntax:
+
+plt.fill_between(x, y)
+
+Example:
+
+months = ["Jan", "Feb", "Mar", "Apr"]
+visitors = [100, 150, 180, 220]
+
+plt.fill_between(months, visitors, alpha=0.5)
+plt.title("Website Visitors")
+plt.xlabel("Month")
+plt.ylabel("Visitors")
+plt.show()
+
+
+==================================================
+10. HEATMAP
+==================================================
+
+A heatmap represents numerical values using different color
+intensities.
+
+Seaborn is commonly used to create heatmaps.
+
+Import:
+
+import seaborn as sns
+
+Syntax:
+
+sns.heatmap(data)
+
+Useful parameters:
+- annot
+- fmt
+- cmap
+- linewidths
+- xticklabels
+- yticklabels
+- cbar
+- square
+
+Example:
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+data = [
+    [80, 75, 90],
+    [70, 85, 88],
+    [92, 80, 95]
+]
+
+sns.heatmap(data, annot=True)
+plt.title("Student Marks")
+plt.show()
+
+
+==================================================
+11. SUBPLOTS
+==================================================
+
+Subplots allow multiple graphs to be displayed in one figure.
+
+Syntax:
+
+plt.subplot(rows, columns, position)
+
+Example:
+
+plt.subplot(1, 2, 1)
+plt.plot([1, 2, 3], [10, 20, 30])
+
+plt.subplot(1, 2, 2)
+plt.bar(["A", "B", "C"], [20, 40, 30])
+
+plt.tight_layout()
+plt.show()
+
+
+==================================================
+12. FIGURE CUSTOMIZATION
+==================================================
+
+Common functions used to improve charts:
+
+plt.title()
+    Adds a title.
+
+plt.xlabel()
+    Adds a label to the X-axis.
+
+plt.ylabel()
+    Adds a label to the Y-axis.
+
+plt.legend()
+    Displays labels for plotted data.
+
+plt.grid()
+    Adds grid lines.
+
+plt.show()
+    Displays the graph.
+
+plt.tight_layout()
+    Adjusts spacing between subplots.
+
+plt.suptitle()
+    Adds an overall title to a figure.
+
+
+==================================================
+13. COMMON MATPLOTLIB FUNCTIONS
+==================================================
+
+Line Plot:
+plt.plot()
+
+Bar Chart:
+plt.bar()
+
+Histogram:
+plt.hist()
+
+Scatter Plot:
+plt.scatter()
+
+Pie Chart:
+plt.pie()
+
+Box Plot:
+plt.boxplot()
+
+Area Chart:
+plt.fill_between()
+
+Subplot:
+plt.subplot()
+
+Display:
+plt.show()
+
+
+==================================================
+14. CHOOSING THE RIGHT CHART
+==================================================
+
+Line Plot
+→ Best for trends and changes over time.
+
+Bar Chart
+→ Best for comparing categories.
+
+Histogram
+→ Best for frequency distributions.
+
+Scatter Plot
+→ Best for relationships between two variables.
+
+Pie Chart
+→ Best for showing parts of a whole.
+
+Box Plot
+→ Best for distribution, spread and outliers.
+
+Area Chart
+→ Best for showing trends with filled regions.
+
+Heatmap
+→ Best for showing values through color intensity.
+
+Subplots
+→ Best for displaying multiple charts together.
+
+
+==================================================
+15. KEY TAKEAWAYS
+==================================================
+
+- Matplotlib is widely used for Python data visualization.
+- Different charts are suitable for different types of data.
+- Labels and titles make graphs easier to understand.
+- Customization improves chart readability.
+- Scatter plots help study relationships.
+- Histograms show data distribution.
+- Box plots can reveal outliers.
+- Heatmaps represent values using color intensity.
+- Subplots allow multiple visualizations in one figure.
+- Seaborn can be used with Matplotlib for advanced visualizations.
