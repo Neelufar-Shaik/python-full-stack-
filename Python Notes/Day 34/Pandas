@@ -1,0 +1,96 @@
+'''DAY 34 - PANDAS: IMPORTANCE, METHODS AND USAGE
+
+1. WHAT IS PANDAS?
+Pandas is a Python library for data manipulation and analysis. It is built on NumPy and provides useful data structures such as Series and DataFrame.
+
+Key features:
+- Handles structured data such as tables, CSV, Excel and SQL data.
+- Supports data cleaning, transformation and aggregation.
+- Provides filtering, sorting and visualization functions.
+- Works with NumPy, Matplotlib and other Python libraries.
+
+Installation:
+pip install pandas
+
+2. PANDAS DATA STRUCTURES
+
+Series:
+- One-dimensional labeled data structure.
+- Useful methods: mean(), sum(), max(), min(), head(), tail(), apply(), map(), sort_values(), sort_index(), value_counts().
+
+DataFrame:
+- Two-dimensional table with labeled rows and columns.
+- Useful attributes/methods: shape, columns, index, info(), describe(), head(), tail(), loc[], iloc[], drop(), rename(), groupby(), agg(), merge(), concat().
+
+3. READING AND WRITING DATA
+
+Reading:
+- pd.read_csv()
+- pd.read_excel()
+- pd.read_json()
+- pd.read_sql()
+
+Writing:
+- df.to_csv()
+- df.to_excel()
+- df.to_json()
+- df.to_sql()
+
+4. DATA SELECTION AND FILTERING
+- df["Column"] selects one column.
+- df[["Col1", "Col2"]] selects multiple columns.
+- Conditions can filter rows.
+- loc[] selects using labels.
+- iloc[] selects using positions.
+
+5. DATA CLEANING AND TRANSFORMATION
+- dropna() removes missing values.
+- fillna() fills missing values.
+- interpolate() fills missing values using interpolation.
+- astype() changes data type.
+- rename() changes column names.
+- drop() removes columns.
+
+6. AGGREGATION AND GROUPING
+groupby() groups data based on a column.
+agg() applies multiple aggregation functions such as mean, max and min.
+
+7. SORTING AND RANKING
+sort_values() sorts rows by a column.
+rank() assigns rankings to values.
+
+8. MERGING AND JOINING
+concat() combines DataFrames row-wise or column-wise.
+merge() combines DataFrames using a common column and supports join types such as inner, left, right and outer.
+
+9. PIVOT TABLES AND CROSS TABULATION
+pivot_table() summarizes data using indexes, columns and an aggregation function.
+crosstab() creates a frequency table between columns.
+
+10. TIME SERIES
+- pd.to_datetime() converts values to datetime.
+- set_index() can set a date column as the index.
+- resample() groups time-based data into periods such as months.
+
+11. VISUALIZATION
+Pandas provides quick plotting through df.plot().
+Examples include bar and scatter plots.
+
+12. IMPORTANT FUNCTIONS
+pd.read_csv()       - Read CSV
+pd.read_excel()     - Read Excel
+df.head()           - First rows
+df.tail()           - Last rows
+df.describe()       - Summary statistics
+df.info()           - Data types and information
+df.isnull().sum()   - Count missing values
+df.dropna()         - Remove missing values
+df.fillna()         - Fill missing values
+df.sort_values()    - Sort data
+df.groupby()        - Group data
+df.merge()          - Merge DataFrames
+df.pivot_table()    - Create pivot tables
+df.plot()           - Quick visualization '''
+
+
+    
