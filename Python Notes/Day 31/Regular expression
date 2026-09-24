@@ -1,4 +1,4 @@
-Day 30 – Regular Expressions in Python
+'''Day 30 – Regular Expressions in Python
 
 1. What is Regular Expression?
 
@@ -7,7 +7,7 @@ replace, or validate text.
 
 Python provides the re module for working with regular expressions.
 
-    import re
+import re
 
 2. Custom Character Classes
 
@@ -128,4 +128,4 @@ r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
 -   subn() → replace + count
 
 Regex is especially useful for text searching, extraction, replacement,
-and validation.
+and validation.'''
