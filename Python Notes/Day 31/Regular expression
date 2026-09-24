@@ -1,0 +1,131 @@
+Day 30 – Regular Expressions in Python
+
+1. What is Regular Expression?
+
+A Regular Expression (Regex) is a pattern used to find, match, split,
+replace, or validate text.
+
+Python provides the re module for working with regular expressions.
+
+    import re
+
+2. Custom Character Classes
+
+  Pattern        Meaning
+  -------------- --------------------------------------------------
+  [abc]          Matches a, b, or c
+  [0-9]          Matches any digit
+  [a-z]          Matches lowercase letters
+  [A-Z]          Matches uppercase letters
+  [a-zA-Z]       Matches alphabet letters
+  [a-zA-Z0-9]    Matches letters or digits
+  [^a-zA-Z0-9]   Matches characters other than letters and digits
+
+3. Predefined Character Classes
+
+  Pattern   Meaning
+  --------- ------------------------------------
+  \d        Digit
+  \D        Non-digit
+  \s        Whitespace
+  \S        Non-whitespace
+  \w        Word character: letters, digits, _
+  \W        Non-word character
+  .         Any character except newline
+
+4. Anchors
+
+-   ^ → checks the beginning of a string
+-   $ → checks the end of a string
+
+Example:
+
+    re.match(r'^a', 'apple')
+    re.search(r'a$', 'banana')
+
+5. Important Meta Characters
+
+  Symbol   Meaning
+  -------- ------------------------------
+  .        Any character except newline
+  ^        Start of string
+  $        End of string
+  *        0 or more repetitions
+  +        1 or more repetitions
+  ?        0 or 1 occurrence
+  {n}      Exactly n repetitions
+  {n,m}    Between n and m repetitions
+  []       Character class
+  |        OR
+  ()       Grouping
+
+6. Common Regex Functions
+
+re.match()
+
+Checks for a match from the beginning of the string.
+
+re.fullmatch()
+
+Matches only when the complete string follows the pattern.
+
+re.search()
+
+Looks for a pattern anywhere in the string.
+
+re.findall()
+
+Returns all matching parts as a list.
+
+re.split()
+
+Splits a string wherever the pattern is found.
+
+re.sub()
+
+Replaces matching text with another value.
+
+re.subn()
+
+Works like sub() and also returns the number of replacements.
+
+7. Raw Strings
+
+Regex patterns commonly use raw strings such as:
+
+    r'\d'
+
+Here r creates a raw string, while \d represents a digit.
+
+8. Meaning of r'\W+'
+
+-   r → raw string
+-   \W → any non-word character
+-   + → one or more occurrences
+
+So r'\W+' means one or more consecutive non-word characters.
+
+It can be used to split text containing commas, spaces, hyphens, etc.
+
+9. Email Validation
+
+A Gmail-specific pattern from the material is:
+
+r'^[a-zA-Z0-9._%+-]+@gmail\.com$'
+
+A more general email pattern is:
+
+r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+
+10. Quick Revision
+
+-   match() → beginning
+-   fullmatch() → complete string
+-   search() → anywhere
+-   findall() → all matches
+-   split() → divide text
+-   sub() → replace
+-   subn() → replace + count
+
+Regex is especially useful for text searching, extraction, replacement,
+and validation.
